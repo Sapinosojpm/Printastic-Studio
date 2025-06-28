@@ -11,13 +11,9 @@ const Navbar = () => {
     { name: "Home", id: "hero" },
     { name: "About", id: "about" },
     { name: "Services", id: "services" },
-    { name: "Team", id: "team" },
-    { name: "Pricing", id: "pricing" },
     { name: "Testimonials", id: "testimonials" },
     { name: "FAQ", id: "faq" },
-    { name: "Portfolio", id: "portfolio" },
-    { name: "Blog", id: "blog" },
-    { name: "Shop", id: "shop" },
+    // { name: "Portfolio", id: "portfolio" },
     { name: "Contact", id: "contact" },
   ];
 
@@ -47,7 +43,7 @@ const Navbar = () => {
 
   return (
     <motion.nav 
-      className="bg-white/95 backdrop-blur-lg shadow-lg sticky top-0 z-50 border-b border-gray-100"
+      className="bg-black/95 backdrop-blur-lg shadow-lg sticky top-0 z-50 border-b border-gray-800"
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -56,8 +52,8 @@ const Navbar = () => {
         
         {/* Logo */}
         <motion.div 
-          className="text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700 tracking-tight cursor-pointer"
-          whileHover={{ scale: 1.05 }}
+          className="text-2xl font-light text-white tracking-tight cursor-pointer"
+          whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.2 }}
         >
           Printastic
@@ -69,36 +65,29 @@ const Navbar = () => {
             <motion.a
               key={item.name}
               href={`#${item.id}`}
-              className={`relative px-4 py-2 font-medium text-sm rounded-lg transition-all duration-300 ${
+              className={`relative px-4 py-2 font-medium text-sm transition-all duration-300 ${
                 activeSection === item.id 
-                  ? 'text-yellow-600 bg-yellow-50' 
-                  : 'text-blue-900 hover:text-yellow-600 hover:bg-blue-50'
+                  ? 'text-white bg-white/10' 
+                  : 'text-gray-300 hover:text-white hover:bg-white/5'
               }`}
               onClick={() => handleNavClick(item.id)}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -2 }}
+              whileHover={{ y: -1 }}
             >
               <span className="relative z-10">{item.name}</span>
               
               {/* Active indicator line */}
               {activeSection === item.id && (
                 <motion.div
-                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-full"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"
                   layoutId="activeIndicator"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 0.3 }}
                 />
               )}
-              
-              {/* Hover effect background */}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-yellow-400/10 to-yellow-600/10 rounded-lg opacity-0"
-                whileHover={{ opacity: 1 }}
-                transition={{ duration: 0.2 }}
-              />
             </motion.a>
           ))}
         </div>
@@ -107,8 +96,8 @@ const Navbar = () => {
         <div className="md:hidden">
           <motion.button 
             onClick={() => setIsOpen(true)} 
-            className="text-blue-900 p-2 rounded-lg hover:bg-blue-50 transition-colors"
-            whileHover={{ scale: 1.1 }}
+            className="text-white p-2 hover:bg-white/10 transition-colors"
+            whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Bars3Icon className="w-6 h-6" />
@@ -120,7 +109,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm md:hidden"
+            className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -134,16 +123,16 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 md:hidden"
+            className="fixed top-0 right-0 h-full w-80 bg-black shadow-2xl z-50 md:hidden border-l border-gray-800"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
             {/* Sidebar Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-yellow-50">
+            <div className="flex items-center justify-between p-6 border-b border-gray-800">
               <motion.div 
-                className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-900 to-blue-700"
+                className="text-xl font-light text-white"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -152,8 +141,8 @@ const Navbar = () => {
               </motion.div>
               <motion.button 
                 onClick={() => setIsOpen(false)} 
-                className="text-blue-900 p-2 rounded-lg hover:bg-blue-100 transition-colors"
-                whileHover={{ scale: 1.1, rotate: 90 }}
+                className="text-white p-2 hover:bg-white/10 transition-colors"
+                whileHover={{ scale: 1.05, rotate: 90 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <XMarkIcon className="w-6 h-6" />
@@ -166,10 +155,10 @@ const Navbar = () => {
                 <motion.a
                   key={item.name}
                   href={`#${item.id}`}
-                  className={`group relative flex items-center px-4 py-3 font-medium text-lg rounded-xl transition-all duration-300 ${
+                  className={`group relative flex items-center px-4 py-3 font-medium text-lg transition-all duration-300 ${
                     activeSection === item.id 
-                      ? 'text-yellow-600 bg-gradient-to-r from-yellow-50 to-yellow-100 shadow-sm' 
-                      : 'text-blue-900 hover:text-yellow-600 hover:bg-blue-50'
+                      ? 'text-white bg-white/10' 
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
                   onClick={() => handleNavClick(item.id)}
                   initial={{ opacity: 0, x: 50 }}
@@ -180,7 +169,7 @@ const Navbar = () => {
                   {/* Active indicator */}
                   {activeSection === item.id && (
                     <motion.div
-                      className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-yellow-400 to-yellow-600 rounded-r-full"
+                      className="absolute left-0 top-0 bottom-0 w-1 bg-white"
                       layoutId="mobileActiveIndicator"
                       initial={{ scaleY: 0 }}
                       animate={{ scaleY: 1 }}
@@ -192,7 +181,7 @@ const Navbar = () => {
                   
                   {/* Hover arrow */}
                   <motion.span 
-                    className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity text-white"
                     animate={{ x: activeSection === item.id ? 0 : -10 }}
                   >
                     →
@@ -200,14 +189,6 @@ const Navbar = () => {
                 </motion.a>
               ))}
             </div>
-            
-            {/* Gradient decoration */}
-            <motion.div
-              className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-blue-100 via-yellow-50 to-transparent pointer-events-none"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-            />
           </motion.div>
         )}
       </AnimatePresence>

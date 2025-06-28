@@ -41,15 +41,22 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="py-24 bg-white px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-12 tracking-tight">
-          What Our Clients Say
-        </h2>
-        
+        <motion.h2
+          className="text-6xl lg:text-7xl font-extralight text-black mb-6 tracking-tight"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          What Our <span className="font-bold text-black">Client Say</span>
+        </motion.h2>
+
+
         <div className="relative">
-          <motion.div 
+          <motion.div
             className="flex gap-8"
-            animate={{ 
-              x: [0, -testimonials.length * 320] 
+            animate={{
+              x: [0, -testimonials.length * 320]
             }}
             transition={{
               x: {
@@ -64,29 +71,29 @@ const Testimonials = () => {
               <motion.div
                 key={idx}
                 className="bg-white rounded-3xl p-8 shadow-xl flex flex-col items-center border-2 border-gray-200 min-w-[300px] cursor-pointer"
-                whileHover={{ 
-                  scale: 1.05, 
+                whileHover={{
+                  scale: 1.05,
                   boxShadow: '0 8px 32px rgba(0,0,0,0.12)',
                   transition: { duration: 0.2 }
                 }}
               >
-                <img 
-                  src={t.img} 
-                  alt={t.name} 
-                  className="w-20 h-20 rounded-full mb-6 object-cover border-2 border-gray-400" 
+                <img
+                  src={t.img}
+                  alt={t.name}
+                  className="w-20 h-20 rounded-full mb-6 object-cover border-2 border-gray-400"
                 />
                 <p className="text-gray-700 mb-4 text-base text-center">
                   "{t.text}"
                 </p>
-                <span className="font-bold text-blue-900">- {t.name}</span>
+                <span className="font-bold text-gray-900">- {t.name}</span>
               </motion.div>
             ))}
           </motion.div>
-          
+
           {/* Gradient overlays for smooth edges */}
-        
+
         </div>
-        
+
         {/* Optional: Pause on hover */}
         <style jsx>{`
           #testimonials:hover .flex {

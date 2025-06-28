@@ -13,7 +13,7 @@ const projects = [
 const Portfolio = () => (
   <section id="portfolio" className="py-24 bg-white px-6">
     <div className="max-w-6xl mx-auto text-center">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-blue-900 mb-12 tracking-tight">Our Portfolio</h2>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-12 tracking-tight">Our Portfolio</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
         {projects.map((project, idx) => (
           <motion.div
@@ -25,7 +25,7 @@ const Portfolio = () => (
             whileHover={{ scale: 1.05, boxShadow: '0 8px 32px rgba(0,0,0,0.18)' }}
           >
             <img src={project.img} alt={project.title} className="w-full h-52 object-cover rounded-xl mb-6" />
-            <h3 className="font-bold text-xl text-blue-900 mb-3">{project.title}</h3>
+            <h3 className="font-bold text-xl text-gray-900 mb-3">{project.title}</h3>
           </motion.div>
         ))}
       </div>

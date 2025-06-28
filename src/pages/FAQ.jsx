@@ -10,12 +10,12 @@ const faqs = [
 const FAQ = () => (
   <section id="faq" className="py-20 bg-white px-6">
     <div className="max-w-3xl mx-auto text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-8">Frequently Asked Questions</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
       <div className="space-y-6 text-left">
         {faqs.map((item, idx) => (
-          <div key={idx} className="bg-white rounded-xl p-6 shadow-md border-l-4 border-yellow-400">
-            <h3 className="font-semibold text-lg text-blue-900 mb-2">Q: {item.q}</h3>
-            <p className="text-yellow-700">A: {item.a}</p>
+          <div key={idx} className="bg-white rounded-xl p-6 shadow-md border-l-4 border-gray-400">
+            <h3 className="font-semibold text-lg text-gray-900 mb-2">Q: {item.q}</h3>
+            <p className="text-gray-700">A: {item.a}</p>
           </div>
         ))}
       </div>
