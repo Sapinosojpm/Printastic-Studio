@@ -3,12 +3,12 @@ import { motion } from 'framer-motion';
 import { assets } from '../assets/assets';
 
 const About = () => {
-  const stats = [
-    { number: "500+", label: "Happy Clients" },
-    { number: "1000+", label: "Projects Completed" },
-    { number: "5+", label: "Years Experience" },
-    { number: "24/7", label: "Support" }
-  ];
+  // const stats = [
+  //   { number: "500+", label: "Happy Clients" },
+  //   { number: "1000+", label: "Projects Completed" },
+  //   { number: "5+", label: "Years Experience" },
+  //   { number: "24/7", label: "Support" }
+  // ];
 
   const values = [
     {
@@ -178,7 +178,7 @@ const About = () => {
         </div>
 
         {/* Stats Section */}
-        <motion.div
+        {/* <motion.div
           className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-32"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -202,7 +202,7 @@ const About = () => {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
         {/* Values Section */}
         <motion.div

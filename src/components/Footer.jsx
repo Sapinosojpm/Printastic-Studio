@@ -8,7 +8,7 @@ const Footer = () => (
         <a href="#home" className="hover:underline hover:text-gray-500 transition">Home</a>
         <a href="#about" className="hover:underline hover:text-gray-500 transition">About</a>
         <a href="#services" className="hover:underline hover:text-gray-500 transition">Services</a>
-        <a href="#testimonials" className="hover:underline hover:text-gray-500 transition">Testimonials</a>
+        {/* <a href="#testimonials" className="hover:underline hover:text-gray-500 transition">Testimonials</a> */}
         <a href="#faq" className="hover:underline hover:text-gray-500 transition">FAQ</a>
         <a href="#contact" className="hover:underline hover:text-gray-500 transition">Contact</a>
         <a href="#portfolio" className="hover:underline hover:text-gray-500 transition">Portfolio</a>

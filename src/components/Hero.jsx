@@ -88,7 +88,7 @@ const Hero = () => (
             </motion.span>
           </motion.a>
 
-          <motion.a
+          {/* <motion.a
             href="#portfolio"
             className="group relative inline-block px-12 py-4 bg-transparent text-white font-semibold text-lg rounded-none border-2 border-white/30 hover:border-white transition-all duration-300"
             whileHover={{
@@ -98,7 +98,7 @@ const Hero = () => (
             whileTap={{ scale: 0.98 }}
           >
             View Portfolio
-          </motion.a>
+          </motion.a> */}
         </motion.div>
 
         <motion.div
