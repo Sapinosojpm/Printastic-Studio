@@ -11,7 +11,7 @@ import photoprinting from './photoprinting.jpg'
 import stickers from './stickers.webp'
 import menu from './menu.jpg'
 import flyers from './flyers.webp'
-import tshirt from './tshirtprinting.jpg'
+import tshirtPrinting from './tshirtPrinting.jpg'
 import totebag from './tote.webp'
 import invitation from './invitation.jpg'
 import rush from './rush.png'
@@ -24,7 +24,7 @@ export const assets = {
     rush,
     invitation,
     totebag,
-    tshirt,
+    tshirtPrinting,
     flyers,
     menu,
     stickers,
