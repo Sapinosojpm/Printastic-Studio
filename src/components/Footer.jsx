@@ -11,7 +11,7 @@ const Footer = () => (
         {/* <a href="#testimonials" className="hover:underline hover:text-gray-500 transition">Testimonials</a> */}
         <a href="#faq" className="hover:underline hover:text-gray-500 transition">FAQ</a>
         <a href="#contact" className="hover:underline hover:text-gray-500 transition">Contact</a>
-        <a href="#portfolio" className="hover:underline hover:text-gray-500 transition">Portfolio</a>
+        {/* <a href="#portfolio" className="hover:underline hover:text-gray-500 transition">Portfolio</a> */}
       </nav>
     </div>
   </footer>
